@@ -1,0 +1,29 @@
+<% include _layouts/header %>
+
+<div class="row products">
+    
+    <% products.forEach(function(p){ %>
+        <div class=" col-10 col-xs-6 col-md-4 col-lg-3 p img-container">
+            <div>
+                
+            <a class="pa" href="/products/<%= p.category %>/<%= p.slug %>">
+                <img class="pimage" src="/product_images/<%= p.id %>/<%= p.image %>" alt="">
+            </a>
+            </div>
+            
+            <h5 style="font-weight: bold; font-family: 'Oswald';"><%= p.title %></h5>
+            
+            <div class="row">
+                
+                <h5 style="font-weight: bold; font-family: 'Oswald';"><%= p.temperature %><strong>K</strong></h5>
+                <h5 style="font-weight: bold; font-family: 'Oswald';"><%= p.humidity %> <strong>g/M3</strong></h5>
+                <h5 style="font-weight: bold; font-family: 'Oswald';">Heart Rate: <%= p.heart %> <strong>BPM</strong></h5>
+                
+            </div>
+            <a class="vd" href="/products/<%= p.category %>/<%= p.slug %>"><button class="btn btn-block btn-info">View Details</button></a>
+        </div>
+        <% }); %>
+    
+</div>
+
+<% include _layouts/footer %>
